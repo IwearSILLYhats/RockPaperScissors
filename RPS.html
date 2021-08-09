@@ -14,7 +14,7 @@
 
     <script>
 
-document.getElementById('play').onclick = playGame;
+document.getElementById('play').onclick = game;
 
 function playerSelection(choice) {
 
@@ -67,7 +67,20 @@ else if ((choice + compy) === 'scissorsrock' || (choice + compy) === 'papersciss
 
 }
         //Compares the input with the output ()
-        
+function game() {
+    playGame();
+    console.log(document.getElementById('results').textContent)
+    playGame();
+    console.log(document.getElementById('results').textContent)
+    playGame();
+    console.log(document.getElementById('results').textContent)
+    playGame();
+    console.log(document.getElementById('results').textContent)
+    playGame();
+    console.log(document.getElementById('results').textContent)
+
+}
+
         
         </script>
 
