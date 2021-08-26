@@ -4,88 +4,40 @@
 
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
-<button id="play">Let's Play: Rock, Paper, Scissors</button>
-<p id="results"></p>
+<h1 id="play">Let's Play: Rock, Paper, Scissors</h1>
 
-    <script>
+<div id="selector">
+<img src="RockIcon.JPG" id="rock" alt="rock">
+<img src="PaperIcon.JPG" id="paper" alt="paper">
+<img src="ScissorsIcon.JPG" id="scissors" alt="scissors">
+</div>
 
-document.getElementById('play').onclick = game;
+<div id="results">
+    <div style="margin: 30px;">
+    <div id="homeTeam">0</div>
+    <div class="teamName">Home Team</div>
+    </div>
+    <div style="margin: 30px;">
+    <div id="awayTeam">0</div>
+    <div class="teamName">Away Team</div>
+    </div>
+</div>
 
-function playerSelection(choice) {
+<div id="score"></div>
 
-let playerInput = prompt('Choose Rock, Paper, or Scissors.', '').toLowerCase();
+    <script src="RPSscripts.js"></script>
 
-if (playerInput === 'rock'){
-        return 'rock';
-}
- else if (playerInput === 'paper') {
-     return 'paper';
- }
-else if (playerInput === 'scissors') {
-    return 'scissors';
-}
-else {
-    alert('You had three choices and still messed it up, try again.')
-}
-}
-        //User clicks a button which provides a prompt. Prompt accepts one of three answers (Rock/Paper/Scissors) and stores that as a variable
-        
-        function computerPlay(compy) {
-        
-        let pick = Math.floor(Math.random() * 3) +1;
-        switch (pick){
-    case 1: 
-    return "rock"
-    break;
-    case 2: 
-    return "paper"
-    break;
-    case 3: 
-    return "scissors"
-        }
-    }
-        //Generates one random output from the computer (either Rock Paper or Scissors)
 
-function playGame() {
-let choice = playerSelection();
-let compy =computerPlay();
-
-if (choice === compy) {
-document.getElementById('results').textContent = "Tie game, play another round!";
-}
-else if ((choice + compy) === 'rockscissors' || (choice + compy) === 'scissorspaper' || (choice + compy) === 'paperrock') {
-    document.getElementById('results').textContent = `You win! ${choice.replace(choice.slice(0,1), choice.slice(0,1).toUpperCase())} beats ${compy.replace(compy.slice(0,1), compy.slice(0,1).toUpperCase())}.`;
-}
-else if ((choice + compy) === 'scissorsrock' || (choice + compy) === 'paperscissors' || (choice + compy) === 'rockpaper') {
-    document.getElementById('results').textContent = `You lose! ${compy.replace(compy.slice(0,1), compy.slice(0,1).toUpperCase())} beats ${choice.replace(choice.slice(0,1), choice.slice(0,1).toUpperCase())}.`;
-}
-
-}
-        //Compares the input with the output ()
-function game() {
-    playGame();
-    console.log(document.getElementById('results').textContent)
-    playGame();
-    console.log(document.getElementById('results').textContent)
-    playGame();
-    console.log(document.getElementById('results').textContent)
-    playGame();
-    console.log(document.getElementById('results').textContent)
-    playGame();
-    console.log(document.getElementById('results').textContent)
-
-}
-
-        
-        </script>
-
+    <footer>
+    <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Rock Paper Scissors Vectors by Vecteezy</a>
+    </footer>
 </body>
-
 
 
 </html>
